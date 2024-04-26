@@ -23,13 +23,11 @@ graphs.forEach( (p) =>{
 console.log(cleanWords)
 
 
-
-
 async function fetchRhyme(arrOfWords) {
     const apiKey = 'lexfrJwqiYUwurjKTTUUDQ==oMPeRCnE2FSqlfJA'
     // iterate over first 4 words of array
     for(let i = 0; i < 4; i++) {
-        const word = arrOfWords[i]
+        const word = arrOfWords[i];
         $.ajax({
             method: 'GET',
             url: 'https://api.api-ninjas.com/v1/rhyme?word=' + word,
@@ -39,7 +37,7 @@ async function fetchRhyme(arrOfWords) {
                 console.log(result);
             }, 
             error: function ajaxError(jqXHR) {
-                console.log('Error: We got an error!!!!', jq.XHR.responseText);
+                console.log('Error: We got an error!!!!', jqXHR.responseText);
             }
         })
     }
@@ -47,6 +45,6 @@ async function fetchRhyme(arrOfWords) {
 
 
 const targetArray = ['Nathan', 'Mickey', 'Bike', 'Automobile', 'Orange']
-console.log(fetch(targetArray));
+console.log(fetchRhyme(targetArray));
 
 

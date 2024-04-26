@@ -7,15 +7,19 @@
       "default_popup": "index.html",
       "default_icon": "orange.png"
     },
+    "background": 
+    {
+      "scripts": ["3p/jquery-3.7.1.min.js"]
+    },
 
-        "content_scripts": [
-          {
-            "js": ["script.js"],
-            "matches": [
-              "https://developer.chrome.com/docs/extensions/*",
-              "https://developer.chrome.com/docs/webstore/*",
-              "https://en.wikipedia.org/*"
-            ]
-          }
+    "content_scripts": [
+      {
+        "js": ["3p/jquery-3.7.1.min.js", "script.js"],
+        "matches": [
+          "https://developer.chrome.com/docs/extensions/*",
+          "https://developer.chrome.com/docs/webstore/*",
+          "https://en.wikipedia.org/*"
         ]
+      }
+    ]
   }
