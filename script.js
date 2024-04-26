@@ -31,6 +31,7 @@ async function fetchRhyme(arrOfWords) {
         $.ajax({
             method: 'GET',
             url: 'https://api.api-ninjas.com/v1/rhyme?word=' + word,
+            //url: ' https://rhymebrain.com/talk?function=getRhymes&word=' + word,
             headers: {'X-Api-Key': apiKey}, 
             contentType: 'application/json', 
             success: function(result) {
@@ -45,6 +46,6 @@ async function fetchRhyme(arrOfWords) {
 
 
 const targetArray = ['Nathan', 'Mickey', 'Bike', 'Automobile', 'Orange']
-console.log(fetchRhyme(targetArray));
+//console.log(fetchRhyme(targetArray));
 
 
