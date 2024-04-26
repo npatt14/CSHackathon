@@ -1,0 +1,22 @@
+
+body {
+    background-color: orange;
+}
+.custom-button {
+    background-color: white;
+    border: none; /* Remove button border */
+    padding: 5px; /* Add padding to button */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    margin-bottom: 0px;
+}
+
+.button-image {
+    width: 70px; /* Set width of the image */
+    height: 70px; /* Set height of the image */
+}
+
+h1 {
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+}
+
