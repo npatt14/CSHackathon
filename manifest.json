@@ -7,14 +7,10 @@
       "default_popup": "index.html",
       "default_icon": "orange.png"
     },
-    "background": 
-    {
-      "scripts": ["3p/jquery-3.7.1.min.js"]
-    },
 
     "content_scripts": [
       {
-        "js": ["3p/jquery-3.7.1.min.js", "script.js"],
+        "js": ["3p/jquery-3.7.1.min.js", "newScript.js"],
         "matches": [
           "https://developer.chrome.com/docs/extensions/*",
           "https://developer.chrome.com/docs/webstore/*",
