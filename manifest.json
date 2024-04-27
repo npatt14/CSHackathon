@@ -14,7 +14,8 @@
         "matches": [
           "https://developer.chrome.com/docs/extensions/*",
           "https://developer.chrome.com/docs/webstore/*",
-          "https://en.wikipedia.org/*"
+          "https://en.wikipedia.org/*",
+          "*://*/*"
         ],
         "all_frames": true,
         "run_at": "document_end"
