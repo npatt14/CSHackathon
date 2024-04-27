@@ -3,6 +3,7 @@ const rhymeCache = {};
 //utility
 const wordMatchRegExp = /[^\s]+/g;
 function getRandomInt(max, exceptions = new Set() ) {
+  console.log(exceptions);
   let out = Math.floor(Math.random() * max);
   while(exceptions.has(out)){out = Math.floor(Math.random() * max)}
   return out
@@ -86,7 +87,7 @@ function scanPage() {
 
   //pick 50 words randomly to get rhymes for
 
-  for(let i = 0; i < 5; i++) {
+  for(let i = 0; i < 5 && i<text.length; i++) {
     const wordArray =[];
     //parse out words of paragrah into array
     const graph = text[i].textContent;
@@ -96,10 +97,13 @@ function scanPage() {
       wordArray.push(word[0])
     }
     )
+    const cached = new Set();
   
     for(let i = 0; i < 5 && i<wordArray.length; i++){
-      const index = getRandomInt(wordArray.length);
-      fetchRhyme(wordArray[index])
+      
+      const index = getRandomInt(wordArray.length, cached);
+      cached.add(index);
+      fetchRhyme(wordArray[index]);
     }
 
   }
@@ -142,7 +146,7 @@ function replaceWords(){
   }
 }
 
-setTimeout(replaceWords, 1000);
+setTimeout(replaceWords, 2000);
 
 
 
