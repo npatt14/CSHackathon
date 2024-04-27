@@ -22,11 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })
 
+
+
 //fetching a single rhyme
 async function fetchRhyme(word) {
   word = word.toLowerCase();
   if(rhymeCache[word]===undefined){
-    const apiKey = 'lexfrJwqiYUwurjKTTUUDQ==oMPeRCnE2FSqlfJA'
+    const apiKey = 'lexfrJwqiYUwurjKTTUUDQ==oMPeRCnE2FSqlfJA';
     $.ajax({
         method: 'GET',
         url: 'https://api.api-ninjas.com/v1/rhyme?word=' + word,
@@ -77,6 +79,26 @@ function scanPage() {
 }
 
 scanPage();
-setTimeout(console.log(rhymeCache), 1000)
 
-function replaceRhymes(){}
+
+//setTimeout(console.log(rhymeCache), 1000);
+
+function replaceWords(){ 
+
+  const text = document.querySelectorAll('h1, h2, h3, h4, h5, p')
+  console.log(rhymeCache);
+  for (keyWord in rhymeCache) {
+    console.log('looping');
+    // for(let i=0; i<text.length; i++) {
+    //   console.log(i);
+    //   if (text[i].innerHTML.includes(keyWord)) {
+    //     text[i].innerHTML = text[i].innerHTML.replace(keyWord, rhymeCache[keyWord][0])
+    //   }
+    // }
+  }
+}
+
+setTimeout(replaceWords(), 2000);
+
+
+
