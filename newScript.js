@@ -89,12 +89,12 @@ function replaceWords(){
   console.log(rhymeCache);
   for (keyWord in rhymeCache) {
     console.log('looping');
-    // for(let i=0; i<text.length; i++) {
-    //   console.log(i);
-    //   if (text[i].innerHTML.includes(keyWord)) {
-    //     text[i].innerHTML = text[i].innerHTML.replace(keyWord, rhymeCache[keyWord][0])
-    //   }
-    // }
+    for(let i=0; i<text.length; i++) {
+      console.log(i);
+      if (text[i].innerHTML.includes(keyWord)) {
+        text[i].innerHTML = text[i].innerHTML.replace(keyWord, rhymeCache[keyWord][0])
+      }
+    }
   }
 }
 
