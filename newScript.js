@@ -21,7 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
       console.error('Button not found');
   }
-})
+  const firstDiv = document.querySelector('div')
+  console.log(firstDiv);
+  firstDiv.appendChild(button);
+}
+)
 
 
 
@@ -84,6 +88,19 @@ scanPage();
 
 //setTimeout(console.log(rhymeCache), 1000);
 
+function rhymePick(rhymeArray, cap = 'no', exceptions = new Set()){
+  let index = getRandomInt(rhymeArray.length, exceptions);
+  if(badwords[rhymeArray[index]]===1){
+    exceptions.add(index);
+    rhymePick(rhymeArray, cap, exceptions)
+  }
+  else{
+    let rhyme = rhymeArray[index]
+    if(cap==='yes'){return rhyme.charAt(0).toUpperCase()+rhyme.slice(1)}
+    else{return rhyme}
+  }
+}
+
 function replaceWords(){ 
 
   
@@ -94,7 +111,10 @@ function replaceWords(){
     const text = document.querySelectorAll('h1, h2, h3, h4, h5, p, b, i');
     for(let i=0; i<text.length; i++) {
       //console.log(text[i])
-      text[i].innerHTML = text[i].innerHTML.replace(` ${keyWord} `, ` <span style="color:orange">${rhymeCache[keyWord][0]}</span> `)
+      if(text[i].innerText.includes(keyWord)||text[i].innerText.includes(keyWord.charAt(0).toUpperCase()+keyWord.slice(1))){
+        text[i].innerHTML = text[i].innerHTML.replace(` ${keyWord} `, ` <span style="color:orange">${rhymePick(rhymeCache[keyWord])}</span> `);
+        text[i].innerHTML = text[i].innerHTML.replace(keyWord.charAt(0).toUpperCase()+keyWord.slice(1), `<span style="color:orange">${rhymePick(rhymeCache[keyWord], 'yes')}</span>`);
+      }
     }
   }
 }
