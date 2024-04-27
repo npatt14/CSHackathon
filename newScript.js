@@ -26,6 +26,29 @@ document.addEventListener('DOMContentLoaded', () => {
   firstDiv.appendChild(button);
 }
 )
+{/* <div class="container">
+  <button type="button" class="custom-button">
+      <img src="orange.png" alt="Rhymeify" class="button-image">
+      <h1>Rhymeify</h1>
+    </button>
+  </div> */}
+
+// const buttonContainer = document.createElement('div');
+// buttonContainer.setAttribute('class','container');
+// const newButton = document.createElement('button');
+// newButton.setAttribute('type',"button");
+// newButton.setAttribute('class',"custom-button");
+// buttonContainer.appendChild(newButton);
+// const orange = document.createElement('img');
+// orange.setAttribute('src','CSHackathon/orange.png');
+// newButton.appendChild(orange)
+
+
+
+// const firstDiv = document.querySelector('div')
+// console.log(firstDiv);
+// firstDiv.appendChild(buttonContainer);
+
 
 
 
